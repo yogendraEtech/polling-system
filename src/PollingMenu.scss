@@ -1,0 +1,16 @@
+.menu-div{
+    width: 70%;
+    margin: 50px auto;
+}
+
+
+.menu{
+    display: block;
+    margin: 20px 0;
+    text-decoration: none;
+    font-size: 20px;
+}
+    .menu:hover{
+        font-size: 25px;
+        transition: .5s
+    }
