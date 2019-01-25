@@ -10,19 +10,19 @@ class ViewPoll extends React.Component {
                     <h5 className='card-header'>{m.question}</h5>
                     <div className='card-body'>
                         <div>
-                            <input className='checkbox' type='checkbox' />
+                            <input className='checkbox' type='radio' name='option' />
                             {m.options[0]}
                         </div>
                         <div>
-                            <input className='checkbox' type='checkbox' />
+                            <input className='checkbox' type='radio' name='option' />
                             {m.options[1]}
                         </div>
                         <div>
-                            <input className='checkbox' type='checkbox' />
+                            <input className='checkbox' type='radio' name='option' />
                             {m.options[2]}
                         </div>
                         <div>
-                            <input className='checkbox' type='checkbox' />
+                            <input className='checkbox' type='radio' name='option' />
                             {m.options[3]}
                         </div>
                     </div>

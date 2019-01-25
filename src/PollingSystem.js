@@ -4,6 +4,7 @@ import CreatePoll from './CreatePoll';
 import ViewPoll from './ViewPoll';
 import TakePoll from './TakePoll';
 import PollingMenu from './PollingMenu';
+import './PollingSystem.scss';
 
 class PollingSystem extends React.Component {
     constructor() {
@@ -27,11 +28,11 @@ class PollingSystem extends React.Component {
                         <Route exact path="/" component={PollingMenu} />
                         <Route exact path="/createPoll" render={() => <CreatePoll handleSubmit={(data) => this.handleSubmit(data)} />} />
                         <Route exact path="/viewPoll" render={() => <ViewPoll item={this.state.item} />} />
-                        <Route exact path="/takePoll" component={TakePoll} />
+                        {/* <Route exact path="/takePoll" component={TakePoll} /> */}
                         <Route render={() => 'Page Not Found'} />
                     </Switch>
                     <div>
-                        <Link to='/' >Back</Link>
+                        <Link to='/' className='back'>Back</Link>
                     </div>
 
                 </div>

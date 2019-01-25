@@ -6,8 +6,8 @@ export default () => {
     return (
         <div className='menu-div'>
             <Link className='menu' to="/createPoll">CreatePoll</Link>
-            <Link className='menu' to="/viewPoll">viewPoll</Link>
-            <Link className='menu' to="/takePoll">takePoll</Link>
+            <Link   className='menu' to="/viewPoll">viewPoll</Link>
+            {/* <Link className='menu' to="/takePoll">takePoll</Link> */}
         </div>
     )
 

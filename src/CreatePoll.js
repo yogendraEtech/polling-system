@@ -1,5 +1,6 @@
 import React from 'react'
 import './CreatePoll.scss'
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 
 class CreatePoll extends React.Component {
@@ -53,7 +54,7 @@ class CreatePoll extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={(e) => { e.preventDefault(); this.props.handleSubmit(this.state.item) }}>
+                <form >
                     <label>Question</label>
                     <input style={{ width: '100%' }} type='text' ref={this.ref} onChange={this.fillQues} />
                     <ol type='a'>
@@ -62,7 +63,7 @@ class CreatePoll extends React.Component {
                         <li><input ref={this.ref} onChange={this.fillOptionsC} /></li>
                         <li><input ref={this.ref} onChange={this.fillOptionsD} /></li>
                     </ol>
-                    <input type='submit' value='Create' onMouseDown={this.submitForm} />
+                    <Link  to="/"><input type='submit' value='Create' onClick={(e) => { this.props.handleSubmit(this.state.item) }}  onMouseDown={this.submitForm} /></Link>
                 </form>
             </div>
         )
