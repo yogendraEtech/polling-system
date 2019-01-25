@@ -2,16 +2,16 @@
     width: 70%;
     margin: 50px auto;
 }
-
-
 .menu{
     display: block;
     margin: 20px 0;
-  
+    padding: 10px 20px;
     font-size: 20px;
+   
 }
     .menu:hover{
         font-size: 25px;
         transition: .5s;
         text-decoration: none;
+        background: lightcyan
     }

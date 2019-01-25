@@ -9,7 +9,7 @@ class CreatePoll extends React.Component {
         this.ref = React.createRef();
         this.state = {
             item: [
-                {
+                {   id:'',
                     question: '',
                     options: [],
                     answer: ''
@@ -21,6 +21,7 @@ class CreatePoll extends React.Component {
         this.ob = null;
         this.oc = null;
         this.od = null;
+        this.i= 3;
     }
 
     fillQues = (event) => {
@@ -40,30 +41,30 @@ class CreatePoll extends React.Component {
     }
     submitForm = () => {
         this.setState({
-            item: 
-                {
-                    question: this.q,
-                    options: [this.oa,this.ob,this.oc,this.od],
-                    answer: ''
+            item:
+            {   id:this.i++,
+                question: this.q + '?',
+                options: [this.oa, this.ob, this.oc, this.od],
+                answer: ''
+            }
 
-                }
-            
         })
-        
+
     }
     render() {
         return (
             <div>
-                <form >
-                    <label>Question</label>
-                    <input style={{ width: '100%' }} type='text' ref={this.ref} onChange={this.fillQues} />
-                    <ol type='a'>
-                        <li><input ref={this.ref} onChange={this.fillOptionsA} /></li>
-                        <li><input ref={this.ref} onChange={this.fillOptionsB} /></li>
-                        <li><input ref={this.ref} onChange={this.fillOptionsC} /></li>
-                        <li><input ref={this.ref} onChange={this.fillOptionsD} /></li>
+                <form className="form-group">
+                    <label><h4>Question</h4></label>
+                    <input className="form-control" style={{ width: '100%' }} type='text' ref={this.ref} onChange={this.fillQues} />
+                    <label><h5>Options</h5></label>
+                    <ol type='A' >
+                        <li><input className="form-control opt-input" ref={this.ref} onChange={this.fillOptionsA} /></li>
+                        <li><input className="form-control opt-input" ref={this.ref} onChange={this.fillOptionsB} /></li>
+                        <li><input className="form-control opt-input" ref={this.ref} onChange={this.fillOptionsC} /></li>
+                        <li><input className="form-control opt-input" ref={this.ref} onChange={this.fillOptionsD} /></li>
                     </ol>
-                    <Link  to="/"><input type='submit' value='Create' onClick={(e) => { this.props.handleSubmit(this.state.item) }}  onMouseDown={this.submitForm} /></Link>
+                    <Link to="/"><input className='btn btn-lg btn-success' type='submit' value='Create' onClick={(e) => { this.props.handleSubmit(this.state.item) }} onMouseDown={this.submitForm} /></Link>
                 </form>
             </div>
         )

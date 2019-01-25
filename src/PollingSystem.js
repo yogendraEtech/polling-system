@@ -10,8 +10,20 @@ class PollingSystem extends React.Component {
     constructor() {
         super();
         this.state = {
-            item: []
-
+            item: [
+                {
+                    id: 1,
+                    question: 'Who is or was your the favourite Prime Minister of India' + '?',
+                    options: ['Jawahar lal nehru', 'Indira Gandhi', 'Narendra Modi', 'Atal bihari vajpeyi'],
+                    answer: ''
+                },
+                {
+                    id: 2,
+                    question: 'Who is or was your the favourite Marvel superhero' + '?',
+                    options: ['Ironman', 'Spiderman', 'Hulk', 'Thor'],
+                    answer: ''
+                }
+            ]
         }
     }
     handleSubmit = (data) => {
@@ -20,7 +32,6 @@ class PollingSystem extends React.Component {
         })
     }
     render() {
-        console.log(this.state)
         return (
             <Router>
                 <div className='container'>
@@ -28,7 +39,7 @@ class PollingSystem extends React.Component {
                         <Route exact path="/" component={PollingMenu} />
                         <Route exact path="/createPoll" render={() => <CreatePoll handleSubmit={(data) => this.handleSubmit(data)} />} />
                         <Route exact path="/viewPoll" render={() => <ViewPoll item={this.state.item} />} />
-                        {/* <Route exact path="/takePoll" component={TakePoll} /> */}
+                        <Route exact path="/takePoll/:id" component={TakePoll} />} />
                         <Route render={() => 'Page Not Found'} />
                     </Switch>
                     <div>
