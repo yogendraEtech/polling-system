@@ -53,7 +53,6 @@ class TakePoll extends React.Component {
                         </div>
                     </div>
                     <input className='btn btn-lg btn-success' type='submit' value='Submit' onClick={this.handleFormSubmit} />
-
                 </div>
             </form>
             )
